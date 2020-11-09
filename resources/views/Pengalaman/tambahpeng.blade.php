@@ -31,13 +31,13 @@
 				</div>
 				@endif
  
-				<form action="tambahpesan" method="POST" enctype="multipart/form-data">
+				<form action="tambahpengalaman" method="POST" enctype="multipart/form-data">
 					{{ csrf_field() }}
 
 
           <div class="form-group">
 						<b>Kategori</b><br/>
-						<input type="text" required="required" class="form-control" name="Kategori">
+						<input type="text" required="required" class="form-control" name="kategori">
 					</div>
           <div class="form-group">
 						<b>Judul</b><br/>
@@ -80,6 +80,7 @@
 		</div>
 	</div>
 </body>
+
   <!--==========================
     Footer
   ============================-->

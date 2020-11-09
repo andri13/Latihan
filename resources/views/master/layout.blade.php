@@ -56,8 +56,8 @@
             <li class="menu-active"><a href="/">Beranda</a></li>
             <li><a href="about">Tentang Kami</a></li>
             <li><a href="layanan">Layanan</a></li>
-            <li><a href="pengalaman">Pengalaman</a></li>
-            <li><a href="team">Personil</a></li>
+            <li><a href="pengalamann">Pengalaman</a></li>
+            <li><a href="teamm">Personil</a></li>
             <li><a href="kontak">Kontak</a></li>
 
             </ul>
@@ -102,8 +102,8 @@
               <li><i class="ion-ios-arrow-right"></i> <a href="/">Beranda</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="about">Tentang Kami</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="layanan">Layanan</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="pengalaman">Pengalaman</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="team">Personil</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="pengalamann">Pengalaman</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="teamm">Personil</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="kontak">Kontak</a></li>
             </ul>
           </div>

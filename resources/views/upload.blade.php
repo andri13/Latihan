@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="container">
  
-			<h2 class="text-center my-5">Tutorial Laravel #30 : Membuat Upload File Dengan Laravel</h2>
+			<h2 class="text-center my-5"></h2>
 			
 			<div class="col-lg-8 mx-auto my-5">	
  
@@ -55,8 +55,8 @@
 					<tbody>
 						@foreach($gambar as $g)
 						<tr>
-							<td><img width="150px" src="{{ url('/data_file/'.$g->file) }}"></td>
-                            <td><img width="150px" src="{{ url('/data_file/'.$g->foto) }}"></td>
+							<td><img width="150px" src="{{ url('/foto/'.$g->file) }}"></td>
+                            <td><img width="150px" src="{{ url('/foto/'.$g->foto) }}"></td>
 							<td>{{$g->keterangan}}</td>
 							<td><a class="btn btn-danger" href="/upload/hapus/{{ $g->id }}">HAPUS</a></td>
 						</tr>

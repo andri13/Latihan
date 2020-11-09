@@ -23,8 +23,8 @@
     <div class="d-flex justify-content-between align-items-center">
       <h2>Portfolio Details</h2>
       <ol>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="pengalamann">Portfolio</a></li>
         <li>Portfolio Details</li>
       </ol>
     </div>
@@ -40,15 +40,15 @@
 
       <div class="owl-carousel portfolio-details-carousel">
       @foreach($pengalaman as $d)
-        <img src="{{$d->foto1}}" class="img-fluid" alt="">
-        <img src="{{$d->foto1}}"  class="img-fluid" alt="">
-        <img src="{{$d->foto1}}"  class="img-fluid" alt="">
+        <img src="{{ url('/pengalaman/'.$d->foto1) }}"  class="img-fluid" alt="">
+        <img src="{{ url('/pengalaman/'.$d->foto2) }}"   class="img-fluid" alt="">
+        <img src="{{ url('/pengalaman/'.$d->foto3) }}"  class="img-fluid" alt="">
       </div>
 
       <div class="portfolio-info">
-        <h3>Project information</h3>
+        <h3>Informasi Proyek</h3>
         <ul>
-          <li><strong>Kategorti</strong>: {{$d->kategori}}</li>
+          <li><strong>Judul</strong>: {{$d->judul}}</li>
           <li><strong>Klien</strong>: {{$d->klien}}</li>
           <li><strong>Tahun Pelaksanaan</strong>: {{$d->tahun}}</li>
           <li><strong>Tempat</strong>: {{$d->alamat}}</li>
@@ -58,7 +58,7 @@
     </div>
 
     <div class="portfolio-description">
-      <h2>This is an example of portfolio detail</h2>
+      <h2>Keterangan</h2>
       <p>
         {{$d->keterangan}}
       </p>

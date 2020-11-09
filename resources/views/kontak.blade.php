@@ -19,20 +19,6 @@
   
 
 
-  <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfolio Details</h2>
-          <ol>
-            <li><a href="/">Home</a></li>
-            <li><a href="layanan">Kontak</a></li>
-            <li>Portfolio Details</li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- Breadcrumbs Section -->
   <main id="main">
 
 
@@ -79,7 +65,7 @@
            
         
           <div class="col-lg-8 mx-auto my-5">	
-          < <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9410600281185!2d107.62974911477271!3d-6.897653195015884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7b0157006a5%3A0x1b0800fc3b55a198!2sJl.%20Batik%20Kumeli%20No.8%2C%20Sukaluyu%2C%20Kec.%20Cibeunying%20Kaler%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040123!5e0!3m2!1sid!2sid!4v1595307890519!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9410600281185!2d107.62974911477271!3d-6.897653195015884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7b0157006a5%3A0x1b0800fc3b55a198!2sJl.%20Batik%20Kumeli%20No.8%2C%20Sukaluyu%2C%20Kec.%20Cibeunying%20Kaler%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040123!5e0!3m2!1sid!2sid!4v1595307890519!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
 				@if(count($errors) > 0)
 				<div class="alert alert-danger">
@@ -110,8 +96,8 @@
               <textarea class="form-control" name="pesan" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
               <div class="validate"></div>
             </div>
+            <input type="submit" value="Upload" class="btn btn-primary">
            
-            <div class="btn btn-primary" type="submit">Send Message</button></div>
           </form>
 
          

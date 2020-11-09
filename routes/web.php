@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('upload', 'App\Http\Controllers\UploadController@upload');
-Route::post('/upload/proses', 'App\Http\Controllers\UploadController@proses_upload');
+Route::post('/upload/proses', 'App\Http\Controllers\UploadController@store');
 
-Route::get('pengalaman', 'App\Http\Controllers\pengalamanController@pengalaman');
+Route::get('pengalamann', 'App\Http\Controllers\pengalamanController@pengalaman');
 Route::get('lengkapp{id}', 'App\Http\Controllers\pengalamanController@lengkapp');
 Route::get('epengalaman', 'App\Http\Controllers\pengalamanController@pengalamanedit');
 Route::post('tambahpengalaman', 'App\Http\Controllers\pengalamanController@tambah');
@@ -28,9 +28,10 @@ Route::get('editpeng{id}', 'App\Http\Controllers\pengalamanController@edit');
 Route::get('hapuspeng{id}', 'App\Http\Controllers\pengalamanController@hapus');
 
 
-Route::get('team', 'App\Http\Controllers\teamController@team');
+Route::get('teamm', 'App\Http\Controllers\teamController@team');
 Route::get('eteam', 'App\Http\Controllers\teamController@teamedit');
-Route::post('tambahteam', 'App\Http\Controllers\teamController@insert');
+Route::post('tambahteam', 'App\Http\Controllers\teamController@tambah');
+Route::post('team/update', 'App\Http\Controllers\teamController@update');
 Route::get('hapusteam{id}', 'App\Http\Controllers\teamController@hapus');
 Route::get('editteam{id}', 'App\Http\Controllers\teamController@edit');
 
@@ -54,9 +55,6 @@ Route::get('layanan', function () {
     return view('layanan');
 });
 
-Route::get('teamm', function () {
-    return view('team');
-});
 Route::get('BA', function () {
     return view('BA');
 });

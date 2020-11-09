@@ -1,4 +1,5 @@
-@extends ('master.edit')
+
+  @extends ('master.edit')
 @section ('content')
 
 
@@ -19,7 +20,7 @@
 	<div class="row">
 		<div class="container">
  
-			<h2 class="text-center my-5">Tambah Pengalaman</h2>
+			<h2 class="text-center my-5">Tambah Personil</h2>
 			
 			<div class="col-lg-8 mx-auto my-5">	
  
@@ -30,25 +31,29 @@
 					@endforeach
 				</div>
 				@endif
-				
-				<form action="tambahteam" method="POST"  enctype="multipart/form-data">
+ 
+				<form action="tambahteam" method="POST" enctype="multipart/form-data">
 					{{ csrf_field() }}
-
-					<div class="card-body">
+				
                   <div class="form-group">
                     <label for="texs">Nama</label>
                     <th><input type="text" class="form-control" name="nama"required></th>
-                    
+                  </div>
+
+                  <div class="from-group">
                     <label for="texs">Jabatan</label>
                     <th><input type="text" class="form-control" name="jabatan"required></th>
-					<div class="form-group">
-                      <b>File Gambar</b><br/>
-                      <input type="file" name="foto">
-                    </div>
+                  </div>
+
+				          <div class="form-group">
+                     <b>File Gambar</b><br/>
+                    <input type="file" name="foto">
+                  </div>
                   
+                  <div>
                     <label for="texs">Deskripsi</label>
-                    <th><input type="text" class="form-control" name="deskripsi"required></th>
-            
+                    <th><input type="text" class="form-control" name="deskripsi"></th>
+                  </div>
                    
 					<input type="submit" value="Upload" class="btn btn-primary">
 				
@@ -58,8 +63,11 @@
 		</div>
 	</div>
 </body>
+
   <!--==========================
     Footer
   ============================-->
   
   @endsection
+
+  

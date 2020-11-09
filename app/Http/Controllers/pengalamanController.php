@@ -37,6 +37,58 @@ class pengalamanController extends Controller
 		return view('pengalaman/epengalaman',['pengalaman' => $pengalaman]);         
     }
 
+   
+
+
+    public function tambah(Request $request){
+        $request->validate([
+            'kategori'    =>  'required',
+            'judul'    =>  'required',
+            'klien'    =>  'required',
+            'alamat'    =>  'required',
+            'tahun'    =>  'required',
+            'keterangan'    =>  'required',
+            'foto1'     =>  'required|image|max:2048',
+            'foto2'         =>  'required|image|max:2048',
+            'foto3'         =>  'required|image|max:2048'
+        ]);
+
+        $image = $request->file('foto1');
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('pengalaman'), $new_name);
+        
+
+		$image2 = $request->file('foto2');
+		$new_name2 = rand() . '.' . $image2->getClientOriginalExtension();
+        $image2->move(public_path('pengalaman'), $new_name2);
+        
+        $image3 = $request->file('foto3');
+		$new_name3 = rand() . '.' . $image3->getClientOriginalExtension();
+		$image3->move(public_path('pengalaman'), $new_name3);
+		$form_data = array(
+            'kategori'       =>   $request->kategori,
+            'judul'       =>   $request->judul,
+            'klien'       =>   $request->klien,
+            'alamat'       =>   $request->alamat,
+            'tahun'       =>   $request->tahun,
+            'keterangan'       =>   $request->keterangan,
+            'foto1'             =>$new_name,
+            'foto2'             =>$new_name2,
+            'foto3'             =>$new_name3,
+        );
+
+        pengalaman::create($form_data);
+
+        return redirect('epengalaman')->with('success', 'Data Added successfully.');
+    }
+
+    public function hapus($id)
+	{
+		DB::table('pengalaman')->where('id_pengalaman',$id)->delete();
+		
+		// alihkan halaman ke halaman pegawai
+		return redirect('epengalaman');
+    }
     public function edit($id)
 	{
 		// mengambil data pegawai berdasarkan id yang dipilih
@@ -45,88 +97,47 @@ class pengalamanController extends Controller
 		return view('pengalaman/editpeng',['pengalaman' => $pengalaman]);
  
     }
-    public function hapus($id)
-	{
-		DB::table('pengalaman')->where('id_pengalaman',$id)->delete();
-		
-		// alihkan halaman ke halaman pegawai
-		return redirect('epengalaman');
-    }
-
-
-    public function tambah(Request $request){
-		$this->validate($request, [
-            
-            'judul'=> 'required',
-            'foto1' => 'image:jpeg,png,jpg|max:2048',
-            'foto2' => 'image:jpeg,png,jpg|max:2048',
-            'foto3' => 'image:jpeg,png,jpg|max:2048',
-            'klien'=> 'required',
-            'alamat'=> 'required',
-            'tahun'=> 'required',
-			'keterangan' => 'required',
-		]);
-		// menyimpan data file yang diupload ke variabel $file
-		$foto1 = $request->foto1('foto1');
- 
-		$foto1 = time()."_".$foto1->getClientOriginalName();
- 
-      	        // isi dengan nama folder tempat kemana file diupload
-		$tujuan_upload = 'foto1';
-		$foto1->move($tujuan_upload,$foto1);
- 
-		DB::create([
-            
-            'judul' => $request->judul,
-            
-            'foto1' => $foto1,
-            'foto1' => $nama_file,
-            'foto1' => $nama_file,
-            'klien' => $request->klien,
-            'alamat' => $request->alamat,
-            'tahun' => $request->tahun,
-			'keterangan' => $request->keterangan,
-		]);
- 
-		return redirect()->back();
-	}
-
-    
-
-    public function tambahh(Request $request)
+  
+    public function update(Request $request, $id)
     {
-        $category = DB::table('pengalaman')
-            ->get()
-            ->pluck('kategori','id_pengalaman');
+        $image_name = $request->hidden_image;
+        $image = $request->file('foto1,foto2,foto3');
+        if($image != '')
+        {
+            $request->validate([
+            'kategori'    =>  'required',
+            'judul'    =>  'required',
+            'klien'    =>  'required',
+            'alamat'    =>  'required',
+            'tahun'    =>  'required',
+            'keterangan'    =>  'required',
+            'foto1'     =>  'required|image|max:2048',
+            'foto2'         =>  'required|image|max:2048',
+            'foto3'         =>  'required|image|max:2048'
+            ]);
 
-        $this->validate($request , [
-            'kategori'         => 'required|string',
-            'judul'         => 'required',
-            'foto1'          => 'required',
-            'klien'        => 'required',
-            'alamat'   => 'required',
-            'tahun'   => 'required',
-            'keterangan'   => 'required',
-
-
-        ]);
-
-        $input = $request->all();
-        $input['foto1'] = null;
-
-        if ($request->hasFile('foto1')){
-            $input['foto1'] = '/upload/products/'.str_slug($input['nama'], '-').'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('/upload/products/'), $input['foto1']);
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $image_name);
+        }
+        else
+        {
+            $request->validate([
+                'first_name'    =>  'required',
+                'last_name'     =>  'required'
+            ]);
         }
 
-        Product::create($input);
+        $form_data = array(
+            'first_name'       =>   $request->first_name,
+            'last_name'        =>   $request->last_name,
+            'image'            =>   $image_name
+        );
+  
+        Crud::whereId($id)->update($form_data);
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Products Created'
-        ]);
-
+        return redirect('crud')->with('success', 'Data is successfully updated');
     }
+
    
 
 

@@ -20,6 +20,7 @@
 	<h2 class="text-center my-5">Pengalaman</h2>
 	<table class="table table-bordered table-striped">
 		<tr>
+			<th>No</th>
 			<th>Kategori</th>
 			<th>Judul</th>
 			<th>foto1</th>
@@ -31,15 +32,16 @@
 			  <th>Action</th>
 
 		</tr>
+		<?php $no=0;?>
 		@foreach($pengalaman as $d)
-		
+		<?php $no++;?>
 		<tr>
-   
+			<td>{{$no}}
 			<td>{{ $d->kategori }}</td>
 			<td>{{ $d->judul }}</td>
-			<td><img  width="150px" src="{{$d->foto1}}"></td>
-			<td>{{ $d->foto2 }}</td>
-			<td>{{ $d->foto3 }}</td>
+			<td><img  width="150px" src="{{url('pengalaman/'.$d->foto1)}}"></td>
+			<td><img  width="150px" src="{{url('pengalaman/'.$d->foto2)}}"></td>
+			<td><img  width="150px" src="{{url('pengalaman/'.$d->foto3)}}"></td>
 			<td>{{ $d->alamat }}</td>
 			<td>{{ $d->tahun }}</td>
 			<td>{{ $d->keterangan}}</td>

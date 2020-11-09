@@ -39,17 +39,19 @@
       
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
          @foreach ($pengalaman as $d)
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="col-lg-4 col-md-5 portfolio-item filter-app">
           <div class="portfolio-wrap">
+           <div class="portfolio-info">
+              <h4><a href="lengkapp{{ $d->id_pengalaman }}">{{$d->kategori}}</a></h4>
+            </div>
             <figure>
-              <img src="{{$d->foto1}}" class="img-fluid" alt="">
-              <a href="assets/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+              <img src="{{ url('/pengalaman/'.$d->foto1) }}" class="img-fluid" alt="">
+              <a href="{{ url('/pengalaman/'.$d->foto1) }}"  data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
               <a href="lengkapp{{ $d->id_pengalaman }}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
             </figure>
 
-            <div class="portfolio-info">
-              <h4><a href="lengkapp{{ $d->id_pengalaman }}">{{$d->kategori}}</a></h4>
-              <p>App</p>
+            <div class="portfolio-infoo">
+              <p>{{$d->judul}}</p>
             </div>
           </div>
         </div>

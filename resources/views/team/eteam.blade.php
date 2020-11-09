@@ -20,22 +20,22 @@
 	<h2 class="text-center my-5">Personil</h2>
 	<table class="table table-bordered table-striped">
 		<tr>
-			
+			<th>No</th>
 			<th>Nama</th>
 			<th>Jabatan</th>
-		
 			<th>Foto</th>
 			<th>Deskripsi</th>
 			  <th>Action</th>
 
 		</tr>
+		<?php $no = 0;?>
 		@foreach($team as $d)
-		
+		<?php $no++ ;?>
 		<tr>
-   
+			<td> {{$no}} </td>
 			<td>{{ $d->nama }}</td>
 			<td>{{ $d->jabatan }}</td>
-			<td> <img  width="150px" src="{{$d->foto}}"> </td>
+			<td> <img  width="150px" src="{{ url('/data_file/'.$d->foto) }}"> </td>
 		
 			<td>{{ $d->deskripsi }}</td>
 			

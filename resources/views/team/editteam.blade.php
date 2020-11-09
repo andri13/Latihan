@@ -23,8 +23,8 @@
     <div class="col-lg-8 mx-auto my-5">	
  
 	  @foreach($team as $d)
-  	<form action="/pegawai/update" method="post">
-		{{ csrf_field() }}
+	  <form action="/team/update" method="POST" enctype="multipart/form-data">
+					{{ csrf_field() }}
 		<input type="hidden" name="id" value="{{ $d->id_team }}"> <br/>
           <div class="form-group">
 						<b>Nama</b><br/>

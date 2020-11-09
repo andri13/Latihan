@@ -28,7 +28,7 @@
         @foreach ($team as $d)
         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="member">
-              <img src="{{$d->foto}}" class="img-fluid" alt="">
+              <img src="{{ url('/data_file/'.$d->foto) }}" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
 
