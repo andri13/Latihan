@@ -14,7 +14,7 @@ class pesanController extends Controller
 
     public function pesan()
     {
-        $pesan = DB::table('pesan')->get();
+        $pesan = pesan::orderBy('id_pesan','DESC')->get();
  
     	// mengirim data pegawai ke view index
 		return view('pesan/tpesan',['pesan' => $pesan]);         

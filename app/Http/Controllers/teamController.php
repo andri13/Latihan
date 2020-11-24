@@ -40,8 +40,8 @@ class teamController extends Controller
 		$this->validate($request, [
 			'nama' => 'required',
 			'jabatan' => 'required',
-			'foto' => 'file|image|mimes:jpeg,png,jpg|max:2048',
-			'deskripsi' => 'required',
+			'foto'         =>  'required|image|max:1500',
+			'deskripsi' => ''
 		]);
 		// menyimpan data file yang diupload ke variabel $file
 
@@ -50,7 +50,7 @@ class teamController extends Controller
 		$nama_file = time()."_".$file->getClientOriginalName();
  
       	        // isi dengan nama folder tempat kemana file diupload
-		$tujuan_upload = 'data_file';
+		$tujuan_upload = 'team';
 		$file->move($tujuan_upload,$nama_file);
 
 		team::create([

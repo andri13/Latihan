@@ -15,7 +15,7 @@ class pengalamanController extends Controller
 
     public function pengalaman()
     {
-        $pengalaman = DB::table('pengalaman')->get();
+        $pengalaman = pengalaman::orderBy('id_pengalaman','DESC')->get();
  
     	// mengirim data pegawai ke view index
 		return view('pengalaman',['pengalaman' => $pengalaman]);         
@@ -31,7 +31,7 @@ class pengalamanController extends Controller
 
     public function pengalamanedit()
     {
-        $pengalaman = DB::table('pengalaman')->get();
+        $pengalaman = pengalaman::orderBy('id_pengalaman','DESC')->get();
  
     	// mengirim data pegawai ke view index
 		return view('pengalaman/epengalaman',['pengalaman' => $pengalaman]);         
@@ -47,10 +47,10 @@ class pengalamanController extends Controller
             'klien'    =>  'required',
             'alamat'    =>  'required',
             'tahun'    =>  'required',
-            'keterangan'    =>  'required',
-            'foto1'     =>  'required|image|max:2048',
-            'foto2'         =>  'required|image|max:2048',
-            'foto3'         =>  'required|image|max:2048'
+            'keterangan'    =>  '',
+            'foto1'     =>  'required|image|max:1500',
+            'foto2'         =>  'required|image|max:1500',
+            'foto3'         =>  'required|image|max:1500'
         ]);
 
         $image = $request->file('foto1');

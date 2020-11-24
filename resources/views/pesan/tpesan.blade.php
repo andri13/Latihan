@@ -20,6 +20,7 @@
 	<table class="table table-bordered table-striped">
     
 		<tr>
+			<th>No</th>
 			<th>Nama</th>
 			<th>Email</th>
 			<th>Subjek</th>
@@ -28,10 +29,12 @@
 			  <th>Action</th>
 
 		</tr>
-		@foreach($pesan as $d)
+		<?php $no=0;?>
 		
+		@foreach($pesan as $d)
+		<?php $no++;?>
 		<tr>
-   
+			<td> {{ $no }} </td>
 			<td>{{ $d->nama }}</td>
 			<td>{{ $d->email }}</td>
 			

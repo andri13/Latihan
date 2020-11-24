@@ -460,7 +460,7 @@
      &copy; Copyright <strong>karno corp</strong>. All Rights Reserved 2020
     </div>
     <div class="credits">
-    <a href="epengalaman" class="btn" ></a>
+    <a href="in" class="btn" ></a>
     
       <!--
         All the links in the footer should remain intact.

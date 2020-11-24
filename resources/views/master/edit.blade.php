@@ -57,6 +57,15 @@
             <li><a href="epengalaman">Pengalaman</a></li>
             <li><a href="eteam">Personil</a></li>
             <li><a href="tpesan">Pesan</a></li>
+            <li class="drop-down"><a >User</a>
+                <ul>
+                  <li><a href="/user/profile">Profil</a></li>
+
+                  <li><a href="/">Log Out</a></li>
+                  
+                  
+                </ul>
+              </li>
 
             </ul>
           </nav><!-- .nav-menu -->

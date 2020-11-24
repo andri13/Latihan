@@ -35,7 +35,7 @@
 			<td> {{$no}} </td>
 			<td>{{ $d->nama }}</td>
 			<td>{{ $d->jabatan }}</td>
-			<td> <img  width="150px" src="{{ url('/data_file/'.$d->foto) }}"> </td>
+			<td> <img  width="150px" src="{{ url('/team/'.$d->foto) }}"> </td>
 		
 			<td>{{ $d->deskripsi }}</td>
 			

@@ -17,6 +17,20 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/in', function () {
+    return view('auth.login');
+});
+
+
+Route::get('/epengalaman', 'HomeController@index')->name('home');
+
+Route::get('dashboard', function () {
+   return view('dashboard');
+});
+
+
+Route::get('dashboardv', 'App\Http\Controllers\pengalamanController@pengalamanedit')->name('home');
+
 Route::get('upload', 'App\Http\Controllers\UploadController@upload');
 Route::post('/upload/proses', 'App\Http\Controllers\UploadController@store');
 
@@ -75,3 +89,7 @@ Route::get('pdetail', function () {
     return view('pdetail');
 });
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

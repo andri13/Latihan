@@ -30,23 +30,24 @@
       <div class=" col-lg-12">
           <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
+            <li data-filter=".filter-Tambang & Lingkungan">Tambang & Lingkungan</li>
+            <li data-filter=".filter-Energi">Energi</li>
+            <li data-filter=".filter-IT">IT</li>
+            <li data-filter=".filter-Agrabisnis">Agrabisnis</li>
           </ul>
         </div>
       </div>
       
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
          @foreach ($pengalaman as $d)
-        <div class="col-lg-4 col-md-5 portfolio-item filter-app">
+        <div class="col-lg-4 col-md-5 portfolio-item filter-{{$d->kategori}}">
           <div class="portfolio-wrap">
            <div class="portfolio-info">
               <h4><a href="lengkapp{{ $d->id_pengalaman }}">{{$d->kategori}}</a></h4>
             </div>
             <figure>
               <img src="{{ url('/pengalaman/'.$d->foto1) }}" class="img-fluid" alt="">
-              <a href="{{ url('/pengalaman/'.$d->foto1) }}"  data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+              <a href="{{ url('/pengalaman/'.$d->foto1) }}"  data-lightbox="portfolio" data-title="{{$d->kategori}}" class="link-preview"><i class="ion ion-eye"></i></a>
               <a href="lengkapp{{ $d->id_pengalaman }}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
             </figure>
 

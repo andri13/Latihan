@@ -9,8 +9,9 @@ use App\Gambar;
 class UploadController extends Controller
 {
 	public function upload(){
-		$gambar = gambar::get();
-		return view('upload',['gambar' => $gambar]);
+			$gambar = gambar::orderBy('id','DESC')->get();
+			
+				return view('upload',['gambar' => $gambar]);
 	}
 
 	public function proses_upload(Request $request){

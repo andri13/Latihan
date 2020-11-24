@@ -47,13 +47,15 @@
 
 				          <div class="form-group">
                      <b>File Gambar</b><br/>
-                    <input type="file" name="foto">
+                    <input type="file" name="foto" required>
                   </div>
                   
-                  <div>
-                    <label for="texs">Deskripsi</label>
-                    <th><input type="text" class="form-control" name="deskripsi"></th>
+
+                  <div class="form-group">
+                    <b>Deskrisi</b>
+                    <textarea class="form-control" name="deskripsi"></textarea>
                   </div>
+                  
                    
 					<input type="submit" value="Upload" class="btn btn-primary">
 				
