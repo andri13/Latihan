@@ -72,36 +72,40 @@ class teamController extends Controller
 			return view('team/editteam',['team' => $team]);
 	 
 		}
-
-		public function update(Request $request){
-			$image_name = $request->hidden_image;
-			$image = $request->file('foto');
-			
 		
-				$request->validate([
-					'nama' => 'required',
-					'jabatan' => 'required',
-					'foto' => 'file|image|mimes:jpeg,png,jpg|max:2048',
-					'deskripsi' => 'required',
-				]);
-	
-				$image_name = rand() . '.' . $image->getClientOriginalExtension();
-				$image->move(public_path('foto'), $image_name);
-			
-			
-	
-			$form_data = array(
-				'nama' => $request->nama,
-				'jabatan' => $request->jabatan,
-				'foto' => $nama_file,
-				'deskripsi' => $request->deskripsi,
+		public function update(Request $request)
+    {
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
+        if($image != '')
+        {
+            $request->validate([
+                'first_name'    =>  'required',
+                'last_name'     =>  'required',
+                'image'         =>  'image|max:2048'
+            ]);
 
-			);
-	  
-			team::whereId('id_team')->update($form_data);
-	
-			return redirect('eteam')->with('success', 'Data is successfully updated');
-		}
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $image_name);
+        }
+        else
+        {
+            $request->validate([
+                'first_name'    =>  'required',
+                'last_name'     =>  'required'
+            ]);
+        }
+
+        $form_data = array(
+            'first_name'       =>   $request->first_name,
+            'last_name'        =>   $request->last_name,
+            'image'            =>   $image_name
+        );
+  
+        Crud::whereId($id)->update($form_data);
+
+        return redirect('crud')->with('success', 'Data is successfully updated');
+    }
 	
 }
 

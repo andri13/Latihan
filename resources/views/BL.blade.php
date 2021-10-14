@@ -22,7 +22,7 @@
           <ol>
             <li><a href="/">Home</a></li>
             <li><a href="layanan">Layanan</a></li>
-            <li>Tambang & Lingkungan</li>
+            <li>Tambang & Lingkunganahuihiousdas</li>
           </ol>
         </div>
 
