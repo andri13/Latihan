@@ -54,8 +54,8 @@
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-            <li class="menu-active"><a href="/">Beranda</a></li>
-            <li><a href="about">Tentang Kami</a></li>
+            <li class="menu-active"><a href="/">Beranda coba ya tes dulua</a></li>
+            <li><a href="about">Tentang Kami ahbjkhaiuh</a></li>
             <li><a href="layanan">Layanan</a></li>
             <li><a href="pengalamann">Pengalaman</a></li>
             <li><a href="teamm">Personil</a></li>
